@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ News summary engine AI 🔎
+# 🛡️ RESTRICTED NEWS SEARCH AI 🔎
 
 **A Multi-Agent System for Secure, Source-Restricted News Analysis**
 
@@ -71,5 +71,6 @@ graph TD
         RootAgent -- "Final Screening & Aggregation" --> FinalReport(📄 Structured Report);
     end
 
+    classDef default font-family: 'Helvetica', sans-serif;
 
-
+```
