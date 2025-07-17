@@ -9,7 +9,7 @@
 <p align="center">
   <a href="#-about-the-project">About</a> •
   <a href="#-core-features">Features</a> •
-  <a href="#-system-architecture">Workflow</a> •
+  <a href="#%EF%B8%8F-system-architecture">Workflow</a> •
   <a href="#-the-agent-team">The Agents</a> •
   <a href="#-getting-started">Getting Started</a>
 </p>
@@ -28,19 +28,19 @@
 >
 > It ensures that every piece of data in the final report is traceable, compliant, and free from the noise of the open internet.
 
-### ✨ Core Features:
+### ✨ Core Features
 
--   **🛡️ Strict Source Control:** The system's primary directive. The root agent is forbidden from searching the web and can only delegate tasks to sub-agents, which are locked to specific domains.
--   **🔎 Multi-Layered Verification:** Each news-gathering agent has a built-in `after_model_call` to validate its findings, and the root agent performs a final screening, ensuring unparalleled source compliance.
--   **🤖 Autonomous Workflow:** From keyword extraction to final report generation, the entire process is orchestrated by the `deep_search_agent` without manual intervention.
--   **📄 Structured & Actionable Output:** Delivers a clean, consistently formatted report, making the insights easy to consume and act upon.
+- **🛡️ Strict Source Control:** The system's primary directive. The root agent is forbidden from searching the web and can only delegate tasks to sub-agents, which are locked to specific domains.
+- **🔎 Multi-Layered Verification:** Each news-gathering agent has a built-in `after_model_call` to validate its findings, and the root agent performs a final screening, ensuring unparalleled source compliance.
+- **🤖 Autonomous Workflow:** From keyword extraction to final report generation, the entire process is orchestrated by the `deep_search_agent` without manual intervention.
+- **📄 Structured & Actionable Output:** Delivers a clean, consistently formatted report, making the insights easy to consume and act upon.
 
 ---
 
 ## ⚙️ System Architecture
-<a name="-system-architecture"></a>
 
 The `deep_search_agent` orchestrates a precise, multi-step workflow to ensure data integrity and compliance.
+
 
 ```mermaid
 graph TD
@@ -59,11 +59,14 @@ graph TD
     end
 
     subgraph "Step 2: Restricted Information Gathering"
-        RootAgent -- Keywords --> NewsAgents(newsA_agent<br>newsB_agent<br>newsC_agent);
+        RootAgent -- Keywords --> NewsAgents["newsA_agent
+newsB_agent
+newsC_agent"];
     end
 
     subgraph "Step 3: Multi-Layered Verification"
-        NewsAgents -- Raw Articles --> Verification(🛡️ Internal URL Check<br>[After Model Callback]);
+        NewsAgents -- Raw Articles --> Verification["🛡️ Internal URL Check
+[After Model Callback]"];
         Verification -- Validated Articles --> RootAgent;
     end
     
@@ -72,5 +75,4 @@ graph TD
     end
 
     classDef default font-family: 'Helvetica', sans-serif;
-
 ```
